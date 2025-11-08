@@ -1,0 +1,17 @@
+# Archivo .gitignore
+
+# Entorno Virtual
+venv/
+/venv/
+
+# Archivo de Entorno con secretos
+.env
+/.env
+
+# Archivos de caché de Python
+__pycache__/
+*.pyc
+
+# Archivos de base de datos local
+*.sqlite3
+db.sqlite3
