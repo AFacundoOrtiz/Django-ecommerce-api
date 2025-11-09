@@ -9,3 +9,10 @@ class ProductListView(generics.ListAPIView):
     queryset = Product.objects.filter(is_active=True)
 
     serializer_class = ProductSerializer
+
+
+class ProductDetailView(generics.ListAPIView):
+    # Vista GET producto por su 'slug'
+    queryset = Product.objects.filter(is_active=True)
+    serializer_class = ProductSerializer
+    lookup_field = 'slug'
