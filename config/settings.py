@@ -53,6 +53,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -142,3 +143,11 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",  # El puerto del frontend
     "http://127.0.0.1:3000",
 ]
+
+# Configuración de Archivos Estáticos (CSS, JS, Imágenes)
+STATIC_URL = '/static/'
+# Directorio donde 'collectstatic' pondrá los archivos
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+# Configuración de WhiteNoise
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
